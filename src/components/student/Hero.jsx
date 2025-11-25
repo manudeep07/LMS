@@ -1,5 +1,6 @@
 import React from 'react'
 import { assets } from '../../assets/assets'
+import SearchBar from './SearchBar'
 
 const Hero = () => {
   return (
@@ -19,7 +20,7 @@ const Hero = () => {
         Whether you're starting fresh or leveling up, our platform helps you learn smarter with guided lessons, 
         personalized pacing, and meaningful results.
       </p>
-
+      <SearchBar/>
     </div>
   )
 }
