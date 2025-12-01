@@ -4,7 +4,7 @@ import SearchBar from './SearchBar'
 
 const Hero = () => {
   return (
-    <div className="flex flex-col items-center text-center px-6 py-20 max-w-3xl mx-auto">
+    <div className="flex flex-col items-center text-center px-6 py-12 max-w-3xl">
       
       <h1 className="text-3xl sm:text-5xl font-bold leading-tight relative">
         Unlock expert-led courses <br />built to <span className='text-blue-500'>help you grow faster.</span>

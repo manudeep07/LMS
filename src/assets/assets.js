@@ -93,6 +93,7 @@ export const assets = {
     lesson_icon
 }
 
+
 export const dummyEducatorData = {
     "_id": "675ac1512100b91a6d9b8b24",
     "name": "GreatStack",
@@ -269,7 +270,8 @@ export const dummyCourses = [
                 ]
             }
         ],
-        "educator": "675ac1512100b91a6d9b8b24",
+        "educator": {"id":"675ac1512100b91a6d9b8b24",
+            "name":"jhon doe",},
         "enrolledStudents": [
             "user_2qQlvXyr02B4Bq6hT0Gvaa5fT9V",
             "user_2qQlvXyr02B4Bq6hT0Gvaa5fT9V",
