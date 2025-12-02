@@ -17,7 +17,7 @@ const Testimonials = () => {
       </p>
 
       {/* Grid */}
-      <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      <div className="mt-10 grid sm:grid-cols-2 mx-22 lg:grid-cols-3 gap-6 max-w-5xl ">
         {dummyTestimonial.map((t, index) => (
           <div
             key={index}
