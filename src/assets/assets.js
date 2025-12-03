@@ -759,6 +759,375 @@ export const dummyCourses = [
         "createdAt": "2024-12-17T08:16:53.622Z",
         "updatedAt": "2025-01-02T06:56:13.208Z",
         "__v": 1,
-        "courseThumbnail": "https://img.youtube.com/vi/WbV3zRgpw_E/maxresdefault.jpg"
-    }
+    "courseThumbnail": "https://img.youtube.com/vi/WbV3zRgpw_E/maxresdefault.jpg"
+    },
+    
+
+    {
+    "_id": "605c72efb3f1c2b1f8e4e1b1",
+    "courseTitle": "React.js - The Complete Guide 2025",
+    "courseDescription": "<h2>Master Modern React with Hooks & Next.js</h2><p>Learn React from scratch and build production-ready applications. This course covers everything: Components, State, Hooks, Context API, Redux, Next.js 14, App Router, Server Components, and deployment.</p><p>Includes 5 real-world projects including a full-stack e-commerce app.</p><ul><li>Master React Hooks & Context</li><li>Build with Next.js 14 (App Router)</li><li>State Management with Redux Toolkit</li></ul>",
+    "coursePrice": 119.99,
+    "isPublished": true,
+    "discount": 35,
+    "courseContent": [
+        {
+            "chapterId": "chapter1",
+            "chapterOrder": 1,
+            "chapterTitle": "React Fundamentals",
+            "chapterContent": [
+                {
+                    "lectureId": "lecture1",
+                    "lectureTitle": "Why React? Component-Based Architecture",
+                    "lectureDuration": 18,
+                    "lectureUrl": "https://youtu.be/SqcY0GlETPk",
+                    "isPreviewFree": true,
+                    "lectureOrder": 1
+                },
+                {
+                    "lectureId": "lecture2",
+                    "lectureTitle": "Setting Up the Development Environment",
+                    "lectureDuration": 12,
+                    "lectureUrl": "https://youtu.be/SqcY0GlETPk",
+                    "isPreviewFree": false,
+                    "lectureOrder": 2
+                }
+            ]
+        },
+        {
+            "chapterId": "chapter2",
+            "chapterOrder": 2,
+            "chapterTitle": "Hooks in Depth",
+            "chapterContent": [
+                {
+                    "lectureId": "lecture3",
+                    "lectureTitle": "useState & useEffect Deep Dive",
+                    "lectureDuration": 28,
+                    "lectureUrl": "https://youtu.be/SqcY0GlETPk",
+                    "isPreviewFree": true,
+                    "lectureOrder": 1
+                },
+                {
+                    "lectureId": "lecture4",
+                    "lectureTitle": "Custom Hooks & Performance",
+                    "lectureDuration": 32,
+                    "lectureUrl": "https://youtu.be/SqcY0GlETPk",
+                    "isPreviewFree": false,
+                    "lectureOrder": 2
+                }
+            ]
+        }
+    ],
+    "educator": {"id": "675ac1512100b91a6d9b8b25", "name": "Sarah Mitchell"},
+    "enrolledStudents": ["user_2qQlvXyr02B4Bq6hT0Gvaa5fT9V", "user_2qjlgkAqIMpiR2flWIRzvWKtE0w"],
+    "courseRatings": [],
+    "createdAt": "2025-01-15T10:22:11.123Z",
+    "updatedAt": "2025-02-28T14:30:22.890Z",
+    "__v": 5,
+    "courseThumbnail": "https://img.youtube.com/vi/SqcY0GlETPk/maxresdefault.jpg"
+},
+{
+    "_id": "605c72efb3f1c2b1f8e4e1b2",
+    "courseTitle": "Node.js & Express - Build REST APIs",
+    "courseDescription": "<h2>Backend Development with Node.js</h2><p>Build fast, scalable server-side applications using Node.js and Express. Learn authentication (JWT), MongoDB/Mongoose, file uploads, error handling, and deployment.</p><p>Build a complete Blog API + Social Media backend from scratch.</p><ul><li>Express middleware & routing</li><li>JWT & OAuth authentication</li><li>MongoDB + Mongoose ODM</li></ul>",
+    "coursePrice": 94.99,
+    "isPublished": true,
+    "discount": 40,
+    "courseContent": [
+        {
+            "chapterId": "chapter1",
+            "chapterOrder": 1,
+            "chapterTitle": "Node.js Fundamentals",
+            "chapterContent": [
+                {
+                    "lectureId": "lecture1",
+                    "lectureTitle": "The Node.js Runtime Explained",
+                    "lectureDuration": 22,
+                    "lectureUrl": "https://youtu.be/TlB_eWDSMt4",
+                    "isPreviewFree": true,
+                    "lectureOrder": 1
+                },
+                {
+                    "lectureId": "lecture2",
+                    "lectureTitle": "NPM & Project Structure",
+                    "lectureDuration": 15,
+                    "lectureUrl": "https://youtu.be/TlB_eWDSMt4",
+                    "isPreviewFree": false,
+                    "lectureOrder": 2
+                }
+            ]
+        }
+    ],
+    "educator": {"id": "675ac1512100b91a6d9b8b26", "name": "Alex Rivera"},
+    "enrolledStudents": [],
+    "courseRatings": [],
+    "createdAt": "2025-02-01T09:15:33.445Z",
+    "updatedAt": "2025-03-01T11:20:10.112Z",
+    "__v": 2,
+    "courseThumbnail": "https://img.youtube.com/vi/TlB_eWDSMt4/maxresdefault.jpg"
+},
+{
+    "_id": "605c72efb3f1c2b1f8e4e1b3",
+    "courseTitle": "UI/UX Design Masterclass with Figma",
+    "courseDescription": "<h2>Design Beautiful & User-Friendly Interfaces</h2><p>Go from beginner to pro UI/UX designer using Figma. Learn design principles, wireframing, prototyping, user research, and how to create design systems.</p><p>Portfolio-ready projects included.</p><ul><li>User Research & Personas</li><li>Wireframing & Prototyping</li><li>Design Systems & Component Libraries</li></ul>",
+    "coursePrice": 79.99,
+    "isPublished": true,
+    "discount": 25,
+    "courseContent": [
+        {
+            "chapterId": "chapter1",
+            "chapterOrder": 1,
+            "chapterTitle": "Foundations of Great Design",
+            "chapterContent": [
+                {
+                    "lectureId": "lecture1",
+                    "lectureTitle": "Principles of Design",
+                    "lectureDuration": 25,
+                    "lectureUrl": "https://youtu.be/ZmP_3D0ECew",
+                    "isPreviewFree": true,
+                    "lectureOrder": 1
+                },
+                {
+                    "lectureId": "lecture2",
+                    "lectureTitle": "Color Theory & Typography",
+                    "lectureDuration": 30,
+                    "lectureUrl": "https://youtu.be/ZmP_3D0ECew",
+                    "isPreviewFree": false,
+                    "lectureOrder": 2
+                }
+            ]
+        }
+    ],
+    "educator": {"id": "675ac1512100b91a6d9b8b27", "name": "Emma Chen"},
+    "enrolledStudents": ["user_2qjlgkAqIMpiR2flWIRzvWKtE0w"],
+    "courseRatings": [{ "userId": "user_2qjlgkAqIMpiR2flWIRzvWKtE0w", "rating": 5 }],
+    "createdAt": "2025-01-20T14:44:22.001Z",
+    "updatedAt": "2025-03-02T08:12:55.667Z",
+    "__v": 4,
+    "courseThumbnail": "https://img.youtube.com/vi/ZmP_3D0ECew/maxresdefault.jpg"
+},
+{
+    "_id": "605c72efb3f1c2b1f8e4e1b4",
+    "courseTitle": "Docker & Kubernetes - Zero to Hero",
+    "courseDescription": "<h2>Containerization and Orchestration</h2><p>Master Docker and Kubernetes from scratch. Learn to containerize apps, write Dockerfiles, manage multi-container apps with Docker Compose, and deploy to Kubernetes clusters.</p><ul><li>Docker Deep Dive</li><li>Kubernetes Architecture</li><li>CI/CD with GitHub Actions</li></ul>",
+    "coursePrice": 109.99,
+    "isPublished": true,
+    "discount": 30,
+    "courseContent": [
+        {
+            "chapterId": "chapter1",
+            "chapterOrder": 1,
+            "chapterTitle": "Docker Essentials",
+            "chapterContent": [
+                {
+                    "lectureId": "lecture1",
+                    "lectureTitle": "Containers vs Virtual Machines",
+                    "lectureDuration": 20,
+                    "lectureUrl": "https://youtu.be/8fi7uSYlOdc",
+                    "isPreviewFree": true,
+                    "lectureOrder": 1
+                }
+            ]
+        }
+    ],
+    "educator": {"id": "675ac1512100b91a6d9b8b28", "name": "Michael Torres"},
+    "enrolledStudents": [],
+    "courseRatings": [],
+    "createdAt": "2025-02-10T11:11:11.111Z",
+    "updatedAt": "2025-02-25T16:40:33.890Z",
+    "__v": 1,
+    "courseThumbnail": "https://img.youtube.com/vi/8fi7uSYlOdc/maxresdefault.jpg"
+},
+{
+    "_id": "605c72efb3f1c2b1f8e4e1b5",
+    "courseTitle": "Graphic Design Bootcamp",
+    "courseDescription": "<h2>From Beginner to Professional Designer</h2><p>Learn Adobe Photoshop, Illustrator, and InDesign. Master logo design, branding, poster design, and digital illustration.</p><p>Build a complete professional portfolio.</p><ul><li>Logo & Brand Identity</li><li>Poster & Flyer Design</li><li>Social Media Graphics</li></ul>",
+    "coursePrice": 69.99,
+    "isPublished": true,
+    "discount": 20,
+    "courseContent": [
+        {
+            "chapterId": "chapter1",
+            "chapterOrder": 1,
+            "chapterTitle": "Photoshop Mastery",
+            "chapterContent": [
+                {
+                    "lectureId": "lecture1",
+                    "lectureTitle": "Photoshop Interface & Tools",
+                    "lectureDuration": 35,
+                    "lectureUrl": "https://youtu.be/0pThn8wOr5k",
+                    "isPreviewFree": true,
+                    "lectureOrder": 1
+                }
+            ]
+        }
+    ],
+    "educator": {"id": "675ac1512100b91a6d9b8b27", "name": "Emma Chen"},
+    "enrolledStudents": ["user_2qQlvXyr02B4Bq6hT0Gvaa5fT9V"],
+    "courseRatings": [],
+    "createdAt": "2025-01-05T07:30:45.223Z",
+    "updatedAt": "2025-02-20T09:55:12.445Z",
+    "__v": 3,
+    "courseThumbnail": "https://img.youtube.com/vi/0pThn8wOr5k/maxresdefault.jpg"
+},
+{
+    "_id": "605c72efb3f1c2b1f8e4e1b6",
+    "courseTitle": "Flutter & Dart - Build iOS & Android Apps",
+    "courseDescription": "<h2>Cross-Platform Mobile Development</h2><p>Build beautiful native apps for iOS and Android using Flutter and Dart. Learn widgets, state management (Provider, Riverpod), Firebase integration, and app deployment.</p>",
+    "coursePrice": 99.99,
+    "isPublished": true,
+    "discount": 25,
+    "courseContent": [
+        {
+            "chapterId": "chapter1",
+            "chapterOrder": 1,
+            "chapterTitle": "Dart Programming Language",
+            "chapterContent": [
+                {
+                    "lectureId": "lecture1",
+                    "lectureTitle": "Dart Syntax & Features",
+                    "lectureDuration": 28,
+                    "lectureUrl": "https://youtu.be/Ej-PcrGr5PA",
+                    "isPreviewFree": true,
+                    "lectureOrder": 1
+                }
+            ]
+        }
+    ],
+    "educator": {"id": "675ac1512100b91a6d9b8b29", "name": "Priya Sharma"},
+    "enrolledStudents": [],
+    "courseRatings": [],
+    "createdAt": "2025-02-18T13:20:10.556Z",
+    "updatedAt": "2025-03-01T10:15:44.778Z",
+    "__v": 1,
+    "courseThumbnail": "https://img.youtube.com/vi/Ej-PcrGr5PA/maxresdefault.jpg"
+},
+{
+    "_id": "605c72efb3f1c2b1f8e4e1b7",
+    "courseTitle": "Ethical Hacking & Penetration Testing",
+    "courseDescription": "<h2>Learn to Think Like a Hacker</h2><p>Master ethical hacking tools and techniques: Kali Linux, Metasploit, Burp Suite, Nmap, Wireshark. Includes real lab environments and CTF challenges.</p>",
+    "coursePrice": 129.99,
+    "isPublished": true,
+    "discount": 15,
+    "courseContent": [
+        {
+            "chapterId": "chapter1",
+            "chapterOrder": 1,
+            "chapterTitle": "Setting Up Your Lab",
+            "chapterContent": [
+                {
+                    "lectureId": "lecture1",
+                    "lectureTitle": "Installing Kali Linux & Virtual Machines",
+                    "lectureDuration": 30,
+                    "lectureUrl": "https://youtu.be/inN8f1gC3Lw",
+                    "isPreviewFree": true,
+                    "lectureOrder": 1
+                }
+            ]
+        }
+    ],
+    "educator": {"id": "675ac1512100b91a6d9b8b30", "name": "Omar Khalil"},
+    "enrolledStudents": [],
+    "courseRatings": [],
+    "createdAt": "2025-01-25T16:44:12.890Z",
+    "updatedAt": "2025-02-28T12:33:21.556Z",
+    "__v": 2,
+    "courseThumbnail": "https://img.youtube.com/vi/inN8f1gC3Lw/maxresdefault.jpg"
+},
+{
+    "_id": "605c72efb3f1c2b1f8e4e1b8",
+    "courseTitle": "AWS Certified Solutions Architect",
+    "courseDescription": "<h2>Pass the AWS SAA-C03 Exam</h2><p>Complete preparation course for the AWS Certified Solutions Architect – Associate exam. Covers all services, best practices, and includes hands-on labs.</p>",
+    "coursePrice": 149.99,
+    "isPublished": true,
+    "discount": 40,
+    "courseContent": [
+        {
+            "chapterId": "chapter1",
+            "chapterOrder": 1,
+            "chapterTitle": "AWS Global Infrastructure",
+            "chapterContent": [
+                {
+                    "lectureId": "lecture1",
+                    "lectureTitle": "Regions, AZs, and Edge Locations",
+                    "lectureDuration": 22,
+                    "lectureUrl": "https://youtu.be/3hLmDsXKzN4",
+                    "isPreviewFree": true,
+                    "lectureOrder": 1
+                }
+            ]
+        }
+    ],
+    "educator": {"id": "675ac1512100b91a6d9b8b28", "name": "Michael Torres"},
+    "enrolledStudents": ["user_2qQlvXyr02B4Bq6hT0Gvaa5fT9V"],
+    "courseRatings": [{ "userId": "user_2qQlvXyr02B4Bq6hT0Gvaa5fT9V", "rating": 5 }],
+    "createdAt": "2024-12-10T08:00:00.000Z",
+    "updatedAt": "2025-03-03T09:44:11.223Z",
+    "__v": 7,
+    "courseThumbnail": "https://img.youtube.com/vi/3hLmDsXKzN4/maxresdefault.jpg"
+},
+{
+    "_id": "605c72efb3f1c2b1f8e4e1b9",
+    "courseTitle": "Digital Marketing Mastery 2025",
+    "courseDescription": "<h2>Grow Any Business Online</h2><p>Master SEO, Google Ads, Facebook Ads, Email Marketing, Content Strategy, Analytics, and Social Media Marketing. Includes real campaign setup.</p>",
+    "coursePrice": 89.99,
+    "isPublished": true,
+    "discount": 50,
+    "courseContent": [
+        {
+            "chapterId": "chapter1",
+            "chapterOrder": 1,
+            "chapterTitle": "Digital Marketing Fundamentals",
+            "chapterContent": [
+                {
+                    "lectureId": "lecture1",
+                    "lectureTitle": "The Marketing Funnel Explained",
+                    "lectureDuration": 25,
+                    "lectureUrl": "https://youtu.be/0Q1b8sNRpdM",
+                    "isPreviewFree": true,
+                    "lectureOrder": 1
+                }
+            ]
+        }
+    ],
+    "educator": {"id": "675ac1512100b91a6d9b8b31", "name": "Laura Benson"},
+    "enrolledStudents": ["user_2qjlgkAqIMpiR2flWIRzvWKtE0w"],
+    "courseRatings": [],
+    "createdAt": "2025-01-08T11:22:33.445Z",
+    "updatedAt": "2025-02-15T13:55:22.778Z",
+    "__v": 3,
+    "courseThumbnail": "https://img.youtube.com/vi/0Q1b8sNRpdM/maxresdefault.jpg"
+},
+{
+    "_id": "605c72efb3f1c2b1f8e4e1ba",
+    "courseTitle": "TypeScript for Beginners to Advanced",
+    "courseDescription": "<h2>Type-Safe JavaScript Development</h2><p>Learn TypeScript from scratch: types, interfaces, generics, decorators, integration with React/Node, and advanced patterns.</p>",
+    "coursePrice": 74.99,
+    "isPublished": true,
+    "discount": 30,
+    "courseContent": [
+        {
+            "chapterId": "chapter1",
+            "chapterOrder": 1,
+            "chapterTitle": "TypeScript Basics",
+            "chapterContent": [
+                {
+                    "lectureId": "lecture1",
+                    "lectureTitle": "Why TypeScript? Setup & Configuration",
+                    "lectureDuration": 20,
+                    "lectureUrl": "https://youtu.be/zQnBQ4tB3ZA",
+                    "isPreviewFree": true,
+                    "lectureOrder": 1
+                }
+            ]
+        }
+    ],
+    "educator": {"id": "675ac1512100b91a6d9b8b25", "name": "Sarah Mitchell"},
+    "enrolledStudents": [],
+    "courseRatings": [],
+    "createdAt": "2025-02-05T15:30:22.890Z",
+    "updatedAt": "2025-03-01T17:22:11.556Z",
+    "__v": 2,
+    "courseThumbnail": "https://img.youtube.com/vi/zQnBQ4tB3ZA/maxresdefault.jpg"
+}
 ]
