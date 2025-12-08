@@ -36,6 +36,7 @@ const NavBar = () => {
     {user? <UserButton/> :<button onClick={()=>openSignIn()} className='cursor-pointer' ><img src={assets.user_icon} alt="usericon" /></button>}
     
   </div>
+  
 </div>
 
   )
