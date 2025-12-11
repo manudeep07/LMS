@@ -5,19 +5,21 @@ import Loading from '../../components/student/Loading'
 import { assets } from '../../assets/assets'
 import humanizeDuration from 'humanize-duration'
 import Footer from '../../components/student/Footer'
+import YouTube from 'react-youtube'
 const CourseDetails = () => {
   const {id}=useParams()
   const {allCourses,calculateRating,calculateChapterTime,calculateCourseDuration,calculateNoOfLectures,currency}=useContext(AppContext)
   const [courseData,setCourseData]=useState(null);
   const [openSection,setopenSection]=useState({});
   const [isAlreadyEnrolled,setisAlreadyEnrolled]=useState(true);
+  const [playerData,setPlayerData]=useState(false);
   const fetchCourseData= async ()=>{
     const findCourse= allCourses.find(course=>course._id==id)
     setCourseData(findCourse)
   }
   useEffect(()=>{
     fetchCourseData();
-  },[])
+  },[allCourses])
 
   const toggleSection=(index)=>{
     setopenSection((prev)=>(
@@ -33,7 +35,7 @@ const CourseDetails = () => {
     <>
     <div className='flex md:flex-row flex-col-reverse relative items-start gap-10
       justify-between md:px-36 px-8 md:pt-30 pt-20 text-left '>
-       <div className="absolute top-0 left-0 w-full h-40 z-10 bg-linear-to-b from-cyan-100/70"></div>
+       <div className="absolute top-0 left-0 w-full h-24 z-10 bg-linear-to-b from-cyan-100/70"></div>
 
  
       {/* leftcolumn */}
@@ -86,7 +88,7 @@ const CourseDetails = () => {
                           <div className='flex items-center justify-between w-full text-gray-800 text-xs md:text-base'>
                             <p>{lecture.lectureTitle}</p>
                           <div className='flex gap-2'>
-                            {lecture.isPreviewFree && <p className='text-blue-500 cursor-pointer'>Preview</p>}
+                            {lecture.isPreviewFree && <p className='text-blue-500 cursor-pointer' onClick={()=>setPlayerData({videoId:lecture.lectureUrl.split('/').pop()})}>Preview</p>}
                           <p>{humanizeDuration(lecture.lectureDuration*60*1000,{units:["h","m"]})}</p>
 
                           </div>
@@ -110,20 +112,53 @@ const CourseDetails = () => {
              </div>
         </div>
         
-
       </div>
 
       {/* rightcolumn */}
       {/* course card section for enrollment */}
       {/* Right Column - Course Card */}
+
+
 <div className="w-full md:w-80 bg-white shadow-lg border-none p-4  md:top-24 mr-32">
-  
-  {/* Thumbnail */}
-<img
-  src={courseData.courseThumbnail}
-  alt=""
-  className="w-full aspect-video object-cover "
-/>
+  {
+  playerData ? (
+    <div className="relative">
+
+      {/* YouTube Player */}
+      <YouTube
+        videoId={playerData.videoId}
+        opts={{
+          width: "100%",
+          height: "100%",
+          playerVars: {
+            autoplay: 1,
+            controls: 1,
+            modestbranding: 1,
+            rel: 0,
+          },
+        }}
+        iframeClassName='w-full aspect-video'
+      />
+
+      {/* Remove Video & Show Thumbnail Again */}
+      <button
+        onClick={() => setPlayerData(null)}
+        className="absolute top-3 right-0 cursor-pointer text-white px-3 py-1 rounded shadow"
+      >
+        x
+      </button>
+
+    </div>
+  ) : (
+    <img
+      src={courseData.courseThumbnail}
+      alt=""
+      className="w-full aspect-video object-cover cursor-pointer"
+    />
+  )
+}
+
+
 
 
   <div className="pt-4">
