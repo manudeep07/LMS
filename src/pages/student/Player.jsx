@@ -170,9 +170,9 @@ const Player = () => {
             ))}
           </div>
 
-          <div>
-            <h1>Rate this Course:</h1>
-            <Rating />
+          <div className='flex gap-3 items-center'>
+            <h1 className='font-semibold'>Rate this Course:</h1>
+            <Rating initialRating={0}/>
           </div>
 
         </div>
