@@ -114,11 +114,9 @@ const CourseDetails = () => {
         
       </div>
 
-      {/* rightcolumn */}
-      {/* course card section for enrollment */}
+
+
       {/* Right Column - Course Card */}
-
-
 <div className="w-full md:w-80 bg-white shadow-lg border-none p-4  md:top-24 mr-32">
   {
   playerData ? (
