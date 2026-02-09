@@ -6,7 +6,7 @@ import { clerkWebhooks } from "./controllers/webhook.js";
 import { clerkMiddleware } from "@clerk/express";
 import educatorRoutes from "./routes/educatorRoutes.js";
 import { connectCloudinary } from "./configs/cloudinary.js";
-
+import courseRoutes from "./routes/courseRoutes.js";
 dotenv.config();
 
 const app = express();
@@ -30,14 +30,14 @@ app.post(
 
 // JSON parser for EVERYTHING ELSE
 app.use(express.json());
-
 // Normal routes
 app.get("/", (req, res) => {
   res.send("Hello World")
-})
+});
+
 app.use("/api/educator",educatorRoutes);
-// app.use("/api/users", userRoutes);
-// app.use("/api/posts", postRoutes);
+app.use("/api/course",courseRoutes);
+
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
