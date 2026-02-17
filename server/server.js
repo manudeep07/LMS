@@ -2,11 +2,12 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import { connectDB } from "./configs/mongoDb.js";
-import { clerkWebhooks } from "./controllers/webhook.js";
+import { clerkWebhooks, stripeWebhooks } from "./controllers/webhook.js";
 import { clerkMiddleware } from "@clerk/express";
 import educatorRoutes from "./routes/educatorRoutes.js";
 import { connectCloudinary } from "./configs/cloudinary.js";
 import courseRoutes from "./routes/courseRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
 dotenv.config();
 
 const app = express();
@@ -27,7 +28,7 @@ app.post(
   express.raw({ type: "application/json" }),
   clerkWebhooks
 );
-
+app.post("/stripe",express.raw({type:"application/json"}),stripeWebhooks)
 // JSON parser for EVERYTHING ELSE
 app.use(express.json());
 // Normal routes
@@ -37,7 +38,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/educator",educatorRoutes);
 app.use("/api/course",courseRoutes);
-
+app.use("/api/user",userRoutes);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
