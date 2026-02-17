@@ -37,7 +37,7 @@ const courseSchema = new mongoose.Schema({
             }
         }],
     educator: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: String,
         ref: "User",
         required: true
     },
