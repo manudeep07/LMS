@@ -88,42 +88,42 @@ export const stripeWebhooks = async (req, res) => {
         case 'payment_intent.succeeded':
             {
                 const paymentIntent = event.data.object;
-                const paymentIntentId=paymentIntent.id;
-                
+                const paymentIntentId = paymentIntent.id;
+
                 const session = await stripe.checkout.sessions.list({
-                    payment_intent:paymentIntentId
+                    payment_intent: paymentIntentId
                 })
-                const {purchaseId}=session.data[0].metadata;
-                const purchaseData=await Purchase.findById(purchaseId);
+                const { purchaseId } = session.data[0].metadata;
+                const purchaseData = await Purchase.findById(purchaseId);
                 const userData = await User.findById(purchaseData.userId);
-                const courseData=await Course.findById(purchaseData.courseId.toString());
-                courseData.enrolledStudents.push(userData._id);
+                const courseData = await Course.findById(purchaseData.courseId.toString());
+                courseData.enrolledStudents.push({ userId: userData._id });
                 await courseData.save();
                 userData.enrolledCourses.push(courseData._id);
                 await userData.save();
-                if(purchaseData){
-                    purchaseData.status="success";
+                if (purchaseData) {
+                    purchaseData.status = "success";
                     await purchaseData.save();
                 }
-                res.json({success:true,message:"Payment successful"})
+                res.json({ success: true, message: "Payment successful" })
                 break
             }
-            
+
         case 'payment_intent.payment_failed':
             {
                 const paymentIntent = event.data.object;
-                const paymentIntentId=paymentIntent.id;
-                
+                const paymentIntentId = paymentIntent.id;
+
                 const session = await stripe.checkout.sessions.list({
-                    payment_intent:paymentIntentId
+                    payment_intent: paymentIntentId
                 })
-                const { purchaseId }=session.data[0].metadata;
-                const purchaseData=await Purchase.findById(purchaseId);
-                if(purchaseData){
-                    purchaseData.status="failed";
+                const { purchaseId } = session.data[0].metadata;
+                const purchaseData = await Purchase.findById(purchaseId);
+                if (purchaseData) {
+                    purchaseData.status = "failed";
                     await purchaseData.save();
                 }
-                res.json({success:true,message:"Payment failed"})
+                res.json({ success: true, message: "Payment failed" })
                 break
             }
         default:
