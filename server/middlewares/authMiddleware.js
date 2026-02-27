@@ -5,6 +5,9 @@ import { clerkClient } from "@clerk/express";
 export const protectEducatorRoute=async(req,res,next)=>{
     try {
         const userId=req.auth().userId;
+        if(!userId){
+            return res.json({success:false,message:"You are not authorized"})
+        }
         const user=await clerkClient.users.getUser(userId);
         if(user.publicMetadata.role !== "educator"){
             return res.json({success:false,message:"You are not authorized"})
