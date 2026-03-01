@@ -95,12 +95,24 @@ export const stripeWebhooks = async (req, res) => {
                 })
                 const { purchaseId } = session.data[0].metadata;
                 const purchaseData = await Purchase.findById(purchaseId);
+
+                if (purchaseData.status === "success") {
+                    return res.json({ success: true, message: "Payment already processed" });
+                }
+
                 const userData = await User.findById(purchaseData.userId);
                 const courseData = await Course.findById(purchaseData.courseId.toString());
-                courseData.enrolledStudents.push({ userId: userData._id });
-                await courseData.save();
-                userData.enrolledCourses.push(courseData._id);
-                await userData.save();
+
+                if (!courseData.enrolledStudents.some(student => String(student.userId) === String(userData._id))) {
+                    courseData.enrolledStudents.push({ userId: userData._id });
+                    await courseData.save();
+                }
+
+                if (!userData.enrolledCourses.includes(courseData._id)) {
+                    userData.enrolledCourses.push(courseData._id);
+                    await userData.save();
+                }
+
                 if (purchaseData) {
                     purchaseData.status = "success";
                     await purchaseData.save();

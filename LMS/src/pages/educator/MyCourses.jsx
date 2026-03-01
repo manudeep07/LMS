@@ -1,67 +1,83 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { AppContext } from '../../context/AppContext'
 import Loading from '../../components/student/Loading'
+import axios from 'axios'
+import { toast } from 'react-toastify'
 
 const MyCourses = () => {
-  const { allCourses, currency } = useContext(AppContext)
+  const { currency, serverUrl, isEducator, getToken } = useContext(AppContext)
   const [courses, setCourses] = useState(null)
 
+  const fetchEducatorCourses = async () => {
+    try {
+      const token = await getToken()
+      const { data } = await axios.get(`${serverUrl}/api/educator/my-courses`, { headers: { Authorization: `Bearer ${token}` } })
+      if (data.success) {
+        setCourses(data.courses)
+      } else {
+        toast.error(data.message)
+      }
+    } catch (error) {
+      toast.error(error.message)
+    }
+  }
+
   useEffect(() => {
-    setCourses(allCourses)
-  }, [allCourses])
+    if (isEducator) {
+      fetchEducatorCourses()
+    }
+  }, [isEducator])
 
   if (!courses) return <Loading />
 
   return (
-    <div className="flex flex-col items-start gap-8 md:p-8 md:pb-0 p-4 pt-8 pb-0 w-full">
+    <div className="flex flex-col items-start gap-8 md:p-10 p-6 w-full max-w-7xl mx-auto">
       <div className="w-full">
-        <h2 className="pb-4 text-lg font-medium text-gray-800">
+        <h2 className="pb-4 text-2xl font-bold text-slate-900 tracking-tight">
           My Courses
         </h2>
 
-        <div className="w-full overflow-x-auto mb-4">
-          <div className="flex flex-col items-center max-w-5xl w-full rounded-md bg-white border">
-            <table className="table-fixed md:table-auto w-full">
-
+        <div className="w-full mt-2 bg-white border border-gray-200 rounded-2xl shadow-[0_2px_10px_rgb(0,0,0,0.02)] overflow-hidden">
+          <div className="w-full overflow-x-auto custom-scrollbar">
+            <table className="w-full text-left whitespace-nowrap">
               {/* Table Header */}
-              <thead className="sticky top-0 bg-blue-50 z-10 border-b border-gray-500/20">
-                <tr className="text-gray-900 text-sm text-left">
-                  <th className="px-4 py-3 font-semibold">
+              <thead className="bg-slate-50/50 border-b border-gray-100">
+                <tr className="text-xs font-bold text-slate-500 uppercase tracking-widest">
+                  <th className="px-8 py-4">
                     Course
                   </th>
-                  <th className="px-4 py-3 font-semibold ">
+                  <th className="px-8 py-4">
                     Earnings
                   </th>
-                  <th className="px-4  py-3 font-semibold hidden sm:table-cell">
+                  <th className="px-8 py-4 hidden sm:table-cell">
                     Students
                   </th>
-                  <th className="px-4 py-3 font-semibold hidden md:table-cell">
+                  <th className="px-8 py-4 hidden md:table-cell">
                     Published On
                   </th>
                 </tr>
               </thead>
 
               {/* Table Body */}
-              <tbody className="text-sm text-gray-500">
+              <tbody className="divide-y divide-gray-50 text-sm font-medium text-slate-600">
                 {courses.map((course, index) => (
                   <tr
                     key={index}
-                    className="border-b border-gray-500/20 odd:bg-white even:bg-gray-50 hover:bg-blue-50 transition"
+                    className="hover:bg-slate-50/60 transition-colors duration-200 group"
                   >
                     {/* Course */}
-                    <td className="md:px-4 px-2 py-3 flex items-center gap-3">
+                    <td className="px-8 py-5 flex items-center gap-4">
                       <img
                         src={course.courseThumbnail}
                         alt="course"
-                        className="w-10 h-10 rounded-md object-cover border"
+                        className="w-12 h-12 rounded-lg object-cover shadow-sm bg-gray-100"
                       />
-                      <span className="truncate font-medium text-gray-700">
+                      <span className="text-slate-900 font-semibold group-hover:text-indigo-600 transition-colors truncate max-w-xs block">
                         {course.courseTitle}
                       </span>
                     </td>
 
-                  
-                    <td className="px-4 py-3 ">
+                    <td className="px-8 py-5 text-slate-500">
                       {currency}
                       {Math.floor(
                         course.enrolledStudents.length *
@@ -71,18 +87,17 @@ const MyCourses = () => {
                     </td>
 
                     {/* Students */}
-                    <td className="px-4 py-3 hidden sm:table-cell">
+                    <td className="px-8 py-5 hidden sm:table-cell text-slate-500">
                       {course.enrolledStudents.length}
                     </td>
 
                     {/* Published Date */}
-                    <td className="px-4 py-3 hidden md:table-cell">
+                    <td className="px-8 py-5 hidden md:table-cell text-slate-400">
                       {new Date(course.createdAt).toLocaleDateString()}
                     </td>
                   </tr>
                 ))}
               </tbody>
-
             </table>
           </div>
         </div>

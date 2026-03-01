@@ -1,28 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
+
 *{
-  font-family: Outfit;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
 @layer base{
   html{
     scroll-behavior: smooth;
+    background-color: #fafafa; /* Minimal off-white */
   }
 }
 
+/* Minimal SaaS Scrollbar */
 ::-webkit-scrollbar{
-  display: none;
+  width: 6px;
+  height: 6px;
 }
-.rich-text { font-size: 15px; color: #7A7B7D; }
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+.rich-text { font-size: 15px; color: #64748b; line-height: 1.6; }
 
-.rich-text p { margin-bottom: 16px; }
+.rich-text p { margin-bottom: 24px; }
 
-.rich-text h1 { font-size: 36px; font-weight: 800; color: #252525; margin: 32px 0; }
+.rich-text h1 { font-size: 32px; font-weight: 700; color: #0f172a; margin: 32px 0 16px; letter-spacing: -0.025em; }
 
-.rich-text h2 { font-size: 22px; font-weight: 700; color: #252525; margin: 24px 0; }
+.rich-text h2 { font-size: 24px; font-weight: 600; color: #0f172a; margin: 24px 0 16px; letter-spacing: -0.025em; }
 
-.rich-text h3 { font-size: 18px; font-weight: 600; color: #333333; margin: 20px 0; }
+.rich-text h3 { font-size: 20px; font-weight: 600; color: #1e293b; margin: 20px 0 12px; }
 
-.rich-text h4 { font-size: 16px; font-weight: 500; color: #444444; margin: 16px 0; }
+.rich-text h4 { font-size: 16px; font-weight: 600; color: #334155; margin: 16px 0 8px; }
 
 .rich-text h5 { font-size: 14px; font-weight: 400; color: #555555; margin: 12px 0; }
 
